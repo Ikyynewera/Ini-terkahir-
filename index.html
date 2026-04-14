@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Beta - Platform Musik Kamu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- VIDEO FIX -->
+<video autoplay muted loop playsinline id="bgVideo">
+    <source src="kece.mp4" type="video/mp4">
+</video>
+
+<div class="content">
+
+    <div class="page active" id="musicPage">
+        <h2>Koleksi Lagu</h2>
+        <div id="musicList"></div>
+    </div>
+
+    <div class="page" id="searchPage">
+        <h2 style="text-align:center;">Cari</h2>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="cari apa lu" onkeyup="searchSong()">
+        </div>
+
+        <div id="notFoundText" style="display:none; text-align:center; margin-top:15px; opacity:0.7;">
+            gak ada yang lu cari disini 😹
+        </div>
+
+        <div id="searchResult"></div>
+    </div>
+
+    <div class="page" id="aboutPage">
+        <h2 style="text-align:center;">About</h2>
+        <p style="text-align:center;">Versi 1.5.9</p>
+    </div>
+
+</div>
+
+<!-- MINI PLAYER -->
+<div class="mini-player" id="miniPlayer">
+    <div style="display:flex; align-items:center; gap:10px;">
+        <img id="miniImg">
+        <div>
+            <div id="miniTitle"></div>
+            <small id="miniArtist"></small>
+        </div>
+    </div>
+
+    <div class="mini-controls">
+        <button onclick="togglePlay()" id="miniPlayBtn">▶</button>
+        <button onclick="stopPlayer()">■</button>
+    </div>
+</div>
+
+<div class="progress-fixed">
+    <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<nav id="navbar">
+    <div class="nav-btn active" onclick="showPage('musicPage', this)">🎵<br>Music</div>
+    <div class="nav-btn" onclick="showPage('searchPage', this)">🔍<br>Cari</div>
+    <div class="nav-btn" onclick="showPage('aboutPage', this)">ℹ️<br>About</div>
+</nav>
+
+<script src="script.js"></script>
+</body>
+</html>

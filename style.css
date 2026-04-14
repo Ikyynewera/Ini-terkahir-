@@ -1,0 +1,301 @@
+/* =========================================
+   🔥 RESET
+========================================= */
+* { box-sizing: border-box; }
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    color: #fff;
+    background: #000;
+}
+
+/* =========================================
+   🎬 BACKGROUND VIDEO
+========================================= */
+#bgVideo {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: -1;
+}
+
+/* =========================================
+   📦 CONTENT
+========================================= */
+.content {
+    padding: 20px;
+    padding-bottom: 140px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.page { display: none; }
+.page.active { display: block; }
+
+/* =========================================
+   🎵 MUSIC CARD
+========================================= */
+.player-card {
+    background: rgba(255,255,255,0.08);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.2s ease;
+}
+}
+
+.player-content {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* FIX GAMBAR */
+.player-card img {
+    width: 55px !important;
+    height: 55px !important;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+/* =========================================
+   🎧 MINI PLAYER (FIX TOTAL)
+========================================= */
+.mini-player {
+    position: fixed;
+    bottom: 80px;
+    left: 10px;
+    right: 10px;
+    height: 75px;
+
+    background: rgba(20,20,20,0.9);
+    backdrop-filter: blur(15px);
+
+    border-radius: 20px;
+    padding: 10px 15px;
+
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 1000;
+}
+
+/* isi kiri */
+.mini-player > div:first-of-type {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mini-player img {
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* text */
+#miniTitle {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#miniArtist {
+    font-size: 11px;
+    opacity: 0.6;
+}
+
+/* control */
+.mini-controls {
+    display: flex;
+    gap: 10px;
+}
+
+/* tombol */
+.mini-controls button {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 12px;
+    border: none;
+
+    background: linear-gradient(145deg, #1db954, #0f7a3c);
+    color: white;
+    font-size: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: 0.2s;
+}
+
+/* tombol stop beda */
+.mini-controls button:last-child {
+    background: rgba(255,255,255,0.1);
+}
+
+/* efek klik */
+.mini-controls button:active {
+    transform: scale(0.9);
+}
+
+/* glow tipis elegan */
+.mini-player::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent);
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+/* =========================================
+   📊 PROGRESS BAR
+========================================= */
+.progress-fixed {
+    position: fixed;
+    bottom: 70px;
+    width: 100%;
+    height: 4px;
+    background: rgba(255,255,255,0.1);
+    z-index: 999;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #1db954;
+    width: 0%;
+}
+
+/* =========================================
+   📱 NAVBAR
+========================================= */
+nav {
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-btn {
+    font-size: 13px;
+    color: #888;
+    text-align: center;
+}
+
+.nav-btn.active {
+    color: #1db954;
+}
+
+/* =========================================
+   🔍 SEARCH
+========================================= */
+.search-container {
+    margin: 15px 0;
+    padding: 3px;
+    border-radius: 15px;
+    background: linear-gradient(270deg, red, orange, yellow, lime, cyan, blue, violet);
+    background-size: 1000% 1000%;
+    animation: rainbow 6s linear infinite;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    background: #000;
+    color: #fff;
+    font-size: 16px;
+}
+
+/* animasi */
+@keyframes rainbow {
+    0% { background-position: 0% }
+    100% { background-position: 100% }
+}
+.song-title {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.song-artist {
+    font-size: 11px;
+    opacity: 0.45;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+/* SCROLL HALUS */
+html {
+    scroll-behavior: smooth;
+}
+
+/* BIKIN SCROLL NYAMAN */
+.content {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+/* ANIMASI CARD MASUK */
+.player-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.4s ease forwards;
+}
+
+/* DELAY BIAR KEREN */
+.player-card:nth-child(1) { animation-delay: 0.05s; }
+.player-card:nth-child(2) { animation-delay: 0.1s; }
+.player-card:nth-child(3) { animation-delay: 0.15s; }
+.player-card:nth-child(4) { animation-delay: 0.2s; }
+.player-card:nth-child(5) { animation-delay: 0.25s; }
+.player-card:nth-child(6) { animation-delay: 0.3s; }
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.player-card:active {
+    transform: scale(0.97);
+    transition: 0.1s;
+}
+nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* sembunyi */
+nav.hide {
+    transform: translateY(100%);
+    opacity: 0;
+}
