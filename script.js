@@ -137,7 +137,14 @@ const songs = [
     src: "dimas.mp3" },
     { title : "masing masing", artist: "ag and nabila", img: "masing.jpeg", src: "masing.mp3"},
     { title: "mix", artist: "mix", img: "sad.jpeg", src:"sad.mp3"},
-    { title:"jaga slalu hatimu", artist :"seventen", img:"seven.jpeg", src:"seven.mp3"}
+    { title:"jaga slalu hatimu", artist :"seventen", img:"seven.jpeg", src:"seven.mp3"},
+    { title:"penjaga hati", artist:"nadhif basamalah", img:"asik.jpeg", src:"asik.mp3"},
+    { title:"tarik ulur", artist:"dimas m", img:"tarik.jpeg", src:"tarik.mp3"},
+    { title:"bersamamu", artist:"vierra", img:"bersamamu.jpeg", src:"bersamamu.mp3"},
+    { title:"jangan paksa rindu", artist:"ifan seventen", img:"jangan.jpeg", src:"jangan.mp3"},
+    { title:"selesaikan masalalumu dulu", artist:"dimas m", img:"selesai.jpeg", src:"selesai.mp3"},
+    { title:"selamat ( selamat tinggal )", artist :"virgoun", img:"selamat.jpeg", src:"selamat.mp3"},
+    { title:"duka", artist:"lupa", img:"duka.jpeg", src:"duka.mp3"}
 ];
 
 // =========================================
@@ -226,3 +233,4 @@ window.addEventListener("scroll", () => {
 
     lastScroll = currentScroll;
 });
+        
